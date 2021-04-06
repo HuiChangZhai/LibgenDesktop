@@ -123,9 +123,9 @@ namespace LibgenDesktop.Common
         public const int DEFAULT_SCI_MAG_GRID_EXISTS_IN_LIBRARY_COLUMN_WIDTH = 55;
         public const int DEFAULT_SETUP_WIZARD_WINDOW_WIDTH = 1050;
         public const int DEFAULT_SETUP_WIZARD_WINDOW_HEIGHT = 650;
-        public const string DEFAULT_DOWNLOAD_MIRROR_NAME = "gen.lib.rus.ec";
-        public const string DEFAULT_SYNCHRONIZATION_MIRROR_NAME = "gen.lib.rus.ec";
-        public const string DEFAULT_DATABASE_DUMP_MIRROR_NAME = "gen.lib.rus.ec";
+        public const string DEFAULT_DOWNLOAD_MIRROR_NAME = "libgen.rs";
+        public const string DEFAULT_SYNCHRONIZATION_MIRROR_NAME = "libgen.rs";
+        public const string DEFAULT_DATABASE_DUMP_MIRROR_NAME = "libgen.rs";
         public const int DEFAULT_MAXIMUM_SEARCH_RESULT_COUNT = 50000;
 
         public const double SEARCH_PROGRESS_REPORT_INTERVAL = 0.1;

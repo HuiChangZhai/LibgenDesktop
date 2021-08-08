@@ -25,7 +25,7 @@ namespace LibgenDesktop.ViewModels
             {
             }
             ErrorWindowViewModel errorWindowViewModel = new ErrorWindowViewModel(exception.ToString(), MainModel.Localization.CurrentLanguage);
-            IWindowContext errorWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.ERROR_WINDOW, errorWindowViewModel, parentWindowContext);
+            IWindowContext errorWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Error_Window, errorWindowViewModel, parentWindowContext);
             errorWindowContext.ShowDialog();
         }
 

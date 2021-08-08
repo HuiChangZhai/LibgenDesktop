@@ -285,7 +285,7 @@ namespace LibgenDesktop.ViewModels.SetupSteps
                     throw new Exception($"Unexpected collection identifier: {importQueueItemViewModel.Collection.Identifier}.");
             }
             ImportWindowViewModel importWindowViewModel = new ImportWindowViewModel(MainModel, databaseDumpFilePath, expectedTableType);
-            IWindowContext importWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.IMPORT_WINDOW, importWindowViewModel,
+            IWindowContext importWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Import_WIndow, importWindowViewModel,
                 SetupWizardWindowContext);
             importWindowContext.ShowDialog();
             switch (importWindowViewModel.Status)

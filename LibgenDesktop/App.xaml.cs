@@ -72,7 +72,7 @@ namespace LibgenDesktop
                                 throw new Exception($"Unknown database status: {databaseStatus}.");
                         }
                         DatabaseErrorWindowViewModel databaseErrorWindowViewModel = new DatabaseErrorWindowViewModel(mainModel, optionSet, databaseFilePath);
-                        IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.DATABASE_ERROR_WINDOW,
+                        IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Database_Error_Window,
                             databaseErrorWindowViewModel);
                         windowContext.ShowDialog();
                         switch (databaseErrorWindowViewModel.Result)
@@ -124,7 +124,7 @@ namespace LibgenDesktop
         private void ShowMainWindow(MainModel mainModel)
         {
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel(mainModel);
-            IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.MAIN_WINDOW, mainWindowViewModel);
+            IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Main_Window, mainWindowViewModel);
             windowContext.Closed += (sender, args) => Close();
             windowContext.Show();
         }
@@ -132,7 +132,7 @@ namespace LibgenDesktop
         private void ShowSetupWizardWindow(MainModel mainModel)
         {
             SetupWizardWindowViewModel setupWizardWindowViewModel = new SetupWizardWindowViewModel(mainModel);
-            IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.SETUP_WIZARD_WINDOW, setupWizardWindowViewModel);
+            IWindowContext windowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Setup_Wizard_WIndow, setupWizardWindowViewModel);
             bool? result = windowContext.ShowDialog();
             if (result == true)
             {
@@ -172,7 +172,7 @@ namespace LibgenDesktop
                 {
                     ErrorWindowViewModel errorWindowViewModel = new ErrorWindowViewModel(exception?.ToString() ?? "(null)",
                         mainModel?.Localization?.CurrentLanguage);
-                    IWindowContext errorWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.ERROR_WINDOW, errorWindowViewModel);
+                    IWindowContext errorWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Error_Window, errorWindowViewModel);
                     errorWindowContext.ShowDialog();
                 }
                 catch (Exception errorWindowException)

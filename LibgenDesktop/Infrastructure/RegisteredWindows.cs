@@ -9,22 +9,22 @@ namespace LibgenDesktop.Infrastructure
     {
         internal enum WindowKey
         {
-            MAIN_WINDOW = 1,
-            NON_FICTION_DETAILS_WINDOW,
-            FICTION_DETAILS_WINDOW,
-            SCI_MAG_DETAILS_WINDOW,
-            ERROR_WINDOW,
-            IMPORT_WINDOW,
-            SETUP_WIZARD_WINDOW,
+            Main_Window = 1,
+            Non_Fiction_Details_Window,
+            Fiction_Detail_Window,
+            Sci_Mag_Detail_WIndow,
+            Error_Window,
+            Import_WIndow,
+            Setup_Wizard_WIndow,
             SETUP_WIZARD_PROXY_SETTINGS_WINDOW,
-            SETTINGS_WINDOW,
-            SYNCHRONIZATION_WINDOW,
-            APPLICATION_UPDATE_WINDOW,
-            LIBRARY_WINDOW,
-            DATABASE_WINDOW,
-            DATABASE_ERROR_WINDOW,
-            ABOUT_WINDOW,
-            SQL_DEBUGGER_WINDOW
+            Settings_Window,
+            Synchronization_Window,
+            Application_Update_Window,
+            Library_Window,
+            Database_Window,
+            Database_Error_Window,
+            About_Window,
+            SQL_Debugger_Window
         }
 
         internal class RegisteredWindow
@@ -44,21 +44,21 @@ namespace LibgenDesktop.Infrastructure
         static RegisteredWindows()
         {
             AllWindows = new Dictionary<WindowKey, RegisteredWindow>();
-            RegisterWindow(WindowKey.MAIN_WINDOW, typeof(MainWindow), typeof(MainWindowViewModel));
-            RegisterWindow(WindowKey.NON_FICTION_DETAILS_WINDOW, typeof(NonFictionDetailsWindow), typeof(NonFictionDetailsWindowViewModel));
-            RegisterWindow(WindowKey.FICTION_DETAILS_WINDOW, typeof(FictionDetailsWindow), typeof(FictionDetailsWindowViewModel));
-            RegisterWindow(WindowKey.SCI_MAG_DETAILS_WINDOW, typeof(SciMagDetailsWindow), typeof(SciMagDetailsWindowViewModel));
-            RegisterWindow(WindowKey.ERROR_WINDOW, typeof(ErrorWindow), typeof(ErrorWindowViewModel));
-            RegisterWindow(WindowKey.IMPORT_WINDOW, typeof(ImportWindow), typeof(ImportWindowViewModel));
-            RegisterWindow(WindowKey.SETUP_WIZARD_WINDOW, typeof(SetupWizardWindow), typeof(SetupWizardWindowViewModel));
+            RegisterWindow(WindowKey.Main_Window, typeof(MainWindow), typeof(MainWindowViewModel));
+            RegisterWindow(WindowKey.Non_Fiction_Details_Window, typeof(NonFictionDetailsWindow), typeof(NonFictionDetailsWindowViewModel));
+            RegisterWindow(WindowKey.Fiction_Detail_Window, typeof(FictionDetailsWindow), typeof(FictionDetailsWindowViewModel));
+            RegisterWindow(WindowKey.Sci_Mag_Detail_WIndow, typeof(SciMagDetailsWindow), typeof(SciMagDetailsWindowViewModel));
+            RegisterWindow(WindowKey.Error_Window, typeof(ErrorWindow), typeof(ErrorWindowViewModel));
+            RegisterWindow(WindowKey.Import_WIndow, typeof(ImportWindow), typeof(ImportWindowViewModel));
+            RegisterWindow(WindowKey.Setup_Wizard_WIndow, typeof(SetupWizardWindow), typeof(SetupWizardWindowViewModel));
             RegisterWindow(WindowKey.SETUP_WIZARD_PROXY_SETTINGS_WINDOW, typeof(SetupWizardProxySettingsWindow), typeof(SetupWizardProxySettingsWindowViewModel));
-            RegisterWindow(WindowKey.SETTINGS_WINDOW, typeof(SettingsWindow), typeof(SettingsWindowViewModel));
-            RegisterWindow(WindowKey.SYNCHRONIZATION_WINDOW, typeof(SynchronizationWindow), typeof(SynchronizationWindowViewModel));
-            RegisterWindow(WindowKey.APPLICATION_UPDATE_WINDOW, typeof(ApplicationUpdateWindow), typeof(ApplicationUpdateWindowViewModel));
-            RegisterWindow(WindowKey.DATABASE_WINDOW, typeof(DatabaseWindow), typeof(DatabaseWindowViewModel));
-            RegisterWindow(WindowKey.DATABASE_ERROR_WINDOW, typeof(DatabaseErrorWindow), typeof(DatabaseErrorWindowViewModel));
-            RegisterWindow(WindowKey.ABOUT_WINDOW, typeof(AboutWindow), typeof(AboutWindowViewModel));
-            RegisterWindow(WindowKey.SQL_DEBUGGER_WINDOW, typeof(SqlDebuggerWindow), typeof(SqlDebuggerWindowViewModel));
+            RegisterWindow(WindowKey.Settings_Window, typeof(SettingsWindow), typeof(SettingsWindowViewModel));
+            RegisterWindow(WindowKey.Synchronization_Window, typeof(SynchronizationWindow), typeof(SynchronizationWindowViewModel));
+            RegisterWindow(WindowKey.Application_Update_Window, typeof(ApplicationUpdateWindow), typeof(ApplicationUpdateWindowViewModel));
+            RegisterWindow(WindowKey.Database_Window, typeof(DatabaseWindow), typeof(DatabaseWindowViewModel));
+            RegisterWindow(WindowKey.Database_Error_Window, typeof(DatabaseErrorWindow), typeof(DatabaseErrorWindowViewModel));
+            RegisterWindow(WindowKey.About_Window, typeof(AboutWindow), typeof(AboutWindowViewModel));
+            RegisterWindow(WindowKey.SQL_Debugger_Window, typeof(SqlDebuggerWindow), typeof(SqlDebuggerWindowViewModel));
             MessageBox = new MessageBox();
         }
 

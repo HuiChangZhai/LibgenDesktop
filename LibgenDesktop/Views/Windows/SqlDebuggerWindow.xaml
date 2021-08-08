@@ -16,9 +16,12 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" x:Name="sqlQueryTextBox" Text="{Binding SqlQuery, UpdateSourceTrigger=PropertyChanged}"
-                 IsEnabled="{Binding IsSqlQueryTextBoxEnabled}" Style="{StaticResource SqlQueryTextBox}"
-                 md:HintAssist.Hint="{Binding Localization.SqlQueryTextBoxHeader}">
+        <TextBox Grid.Row="0"
+                x:Name="sqlQueryTextBox"
+                Text="{Binding SqlQuery, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{Binding IsSqlQueryTextBoxEnabled}"
+                Style="{StaticResource SqlQueryTextBox}"
+                md:HintAssist.Hint="{Binding Localization.SqlQueryTextBoxHeader}">
             <TextBox.InputBindings>
                 <KeyBinding Command="{Binding RunSqlCommand}" Key="Enter" />
             </TextBox.InputBindings>

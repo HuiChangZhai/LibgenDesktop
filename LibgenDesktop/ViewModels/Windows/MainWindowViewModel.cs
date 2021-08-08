@@ -350,7 +350,7 @@ namespace LibgenDesktop.ViewModels.Windows
                 bool modalWindow = openDetailsMode == SearchSettings.DetailsMode.NEW_MODAL_WINDOW;
                 NonFictionDetailsWindowViewModel detailsWindowViewModel = new NonFictionDetailsWindowViewModel(MainModel, e.NonFictionBook, modalWindow);
                 detailsWindowViewModel.SelectDownloadRequested += SelectDownloadRequested;
-                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.NON_FICTION_DETAILS_WINDOW, detailsWindowViewModel, CurrentWindowContext);
+                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Non_Fiction_Details_Window, detailsWindowViewModel, CurrentWindowContext);
                 NonFictionDetailsWindowSettings detailsWindowSettings = MainModel.AppSettings.NonFiction.DetailsWindow;
                 if (modalWindow)
                 {
@@ -383,7 +383,7 @@ namespace LibgenDesktop.ViewModels.Windows
                 bool modalWindow = openDetailsMode == SearchSettings.DetailsMode.NEW_MODAL_WINDOW;
                 FictionDetailsWindowViewModel detailsWindowViewModel = new FictionDetailsWindowViewModel(MainModel, e.FictionBook, modalWindow);
                 detailsWindowViewModel.SelectDownloadRequested += SelectDownloadRequested;
-                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.FICTION_DETAILS_WINDOW, detailsWindowViewModel, CurrentWindowContext);
+                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Fiction_Detail_Window, detailsWindowViewModel, CurrentWindowContext);
                 FictionDetailsWindowSettings detailsWindowSettings = MainModel.AppSettings.Fiction.DetailsWindow;
                 if (modalWindow)
                 {
@@ -416,7 +416,7 @@ namespace LibgenDesktop.ViewModels.Windows
                 bool modalWindow = openDetailsMode == SearchSettings.DetailsMode.NEW_MODAL_WINDOW;
                 SciMagDetailsWindowViewModel detailsWindowViewModel = new SciMagDetailsWindowViewModel(MainModel, e.SciMagArticle, modalWindow);
                 detailsWindowViewModel.SelectDownloadRequested += SelectDownloadRequested;
-                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.SCI_MAG_DETAILS_WINDOW, detailsWindowViewModel, CurrentWindowContext);
+                IWindowContext detailsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Sci_Mag_Detail_WIndow, detailsWindowViewModel, CurrentWindowContext);
                 SciMagDetailsWindowSettings detailsWindowSettings = MainModel.AppSettings.SciMag.DetailsWindow;
                 if (modalWindow)
                 {
@@ -575,7 +575,7 @@ namespace LibgenDesktop.ViewModels.Windows
             ApplicationUpdateWindowViewModel applicationUpdateWindowViewModel =
                 new ApplicationUpdateWindowViewModel(MainModel, updateCheckResult, showSkipVersionButton);
             applicationUpdateWindowViewModel.ApplicationShutdownRequested += Shutdown;
-            IWindowContext applicationUpdateWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.APPLICATION_UPDATE_WINDOW,
+            IWindowContext applicationUpdateWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Application_Update_Window,
                 applicationUpdateWindowViewModel, CurrentWindowContext);
             if (applicationUpdateWindowContext.ShowDialog() == true)
             {
@@ -591,7 +591,7 @@ namespace LibgenDesktop.ViewModels.Windows
             {
                 ImportWindowViewModel importWindowViewModel =
                     new ImportWindowViewModel(MainModel, selectSqlDumpFileDialogResult.SelectedFilePaths.First(), null);
-                IWindowContext importWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.IMPORT_WINDOW, importWindowViewModel, CurrentWindowContext);
+                IWindowContext importWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Import_WIndow, importWindowViewModel, CurrentWindowContext);
                 importWindowContext.ShowDialog();
                 RefreshSearchTabCollectionAvailabilities();
             }
@@ -623,7 +623,7 @@ namespace LibgenDesktop.ViewModels.Windows
                 }
             }
             SynchronizationWindowViewModel synchronizationWindowViewModel = new SynchronizationWindowViewModel(MainModel);
-            IWindowContext synchronizationWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.SYNCHRONIZATION_WINDOW, synchronizationWindowViewModel, CurrentWindowContext);
+            IWindowContext synchronizationWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Synchronization_Window, synchronizationWindowViewModel, CurrentWindowContext);
             synchronizationWindowContext.ShowDialog();
             if (IsDefaultSearchTabVisible)
             {
@@ -662,7 +662,7 @@ namespace LibgenDesktop.ViewModels.Windows
         private void DatabaseMenuItemClick()
         {
             DatabaseWindowViewModel databaseWindowViewModel = new DatabaseWindowViewModel(MainModel);
-            IWindowContext databaseWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.DATABASE_WINDOW, databaseWindowViewModel,
+            IWindowContext databaseWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Database_Window, databaseWindowViewModel,
                 CurrentWindowContext);
             databaseWindowContext.ShowDialog();
             RefreshSearchTabCollectionAvailabilities();
@@ -672,7 +672,7 @@ namespace LibgenDesktop.ViewModels.Windows
         {
             SqlDebuggerWindowViewModel sqlDebuggerWindowViewModel = new SqlDebuggerWindowViewModel(MainModel);
             IWindowContext sqlDebuggerWindowContext =
-                WindowManager.CreateWindow(RegisteredWindows.WindowKey.SQL_DEBUGGER_WINDOW, sqlDebuggerWindowViewModel, CurrentWindowContext);
+                WindowManager.CreateWindow(RegisteredWindows.WindowKey.SQL_Debugger_Window, sqlDebuggerWindowViewModel, CurrentWindowContext);
             sqlDebuggerWindowContext.ShowDialog();
             RefreshSearchTabCollectionAvailabilities();
         }
@@ -748,7 +748,7 @@ namespace LibgenDesktop.ViewModels.Windows
         private void SettingsMenuItemClick()
         {
             SettingsWindowViewModel settingsWindowViewModel = new SettingsWindowViewModel(MainModel);
-            IWindowContext settingsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.SETTINGS_WINDOW, settingsWindowViewModel,
+            IWindowContext settingsWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.Settings_Window, settingsWindowViewModel,
                 CurrentWindowContext);
             settingsWindowContext.ShowDialog();
         }
@@ -756,7 +756,7 @@ namespace LibgenDesktop.ViewModels.Windows
         private void AboutMenuItemClick()
         {
             AboutWindowViewModel aboutWindowViewModel = new AboutWindowViewModel(MainModel);
-            IWindowContext aboutWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.ABOUT_WINDOW, aboutWindowViewModel,
+            IWindowContext aboutWindowContext = WindowManager.CreateWindow(RegisteredWindows.WindowKey.About_Window, aboutWindowViewModel,
                 CurrentWindowContext);
             if (aboutWindowContext.ShowDialog() == true && aboutWindowViewModel.ApplicationUpdateRequested)
             {

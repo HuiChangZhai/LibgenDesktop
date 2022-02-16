@@ -94,7 +94,7 @@
         public const string GET_NON_FICTION_MAX_LIBGEN_ID = "SELECT MAX(LibgenId) FROM non_fiction LIMIT 1";
 
         public const string SEARCH_NON_FICTION = "SELECT * FROM non_fiction " +
-            "WHERE Id IN (SELECT rowid FROM non_fiction_fts WHERE non_fiction_fts MATCH @SearchQuery) ORDER BY Id";
+            "WHERE Id IN (SELECT rowid FROM non_fiction_fts WHERE non_fiction_fts MATCH @SearchQuery) ORDER BY Year DESC, Id DESC";
 
         public const string INSERT_NON_FICTION =
             "INSERT INTO non_fiction VALUES (@Id,@Title,@VolumeInfo,@Series,@Periodical,@Authors,@Year,@Edition,@Publisher,@City," +
@@ -218,12 +218,12 @@
 
         public const string GET_FICTION_ID_BY_LIBGENID = "SELECT Id FROM fiction WHERE LibgenId = @LibgenId LIMIT 1";
 
-        public const string GET_LAST_MODIFIED_FICTION = 
+        public const string GET_LAST_MODIFIED_FICTION =
             "SELECT * FROM fiction WHERE LastModifiedDateTime = (SELECT MAX(LastModifiedDateTime) FROM fiction) ORDER BY LibgenId DESC LIMIT 1";
 
         public const string GET_FICTION_MAX_LIBGEN_ID = "SELECT MAX(LibgenId) FROM fiction LIMIT 1";
 
-        public const string SEARCH_FICTION = "SELECT * FROM fiction WHERE Id IN (SELECT rowid FROM fiction_fts WHERE fiction_fts MATCH @SearchQuery) ORDER BY Id";
+        public const string SEARCH_FICTION = "SELECT * FROM fiction WHERE Id IN (SELECT rowid FROM fiction_fts WHERE fiction_fts MATCH @SearchQuery) ORDER BY Id DESC";
 
         public const string INSERT_FICTION =
             "INSERT INTO fiction VALUES (@Id,@Md5Hash,@Title,@Authors,@Series,@Edition,@Language,@Year,@Publisher,@Pages,@Identifier,@GoogleBookId,@Asin," +
@@ -337,7 +337,7 @@
 
         public const string GET_SCIMAG_MAX_LIBGEN_ID = "SELECT MAX(LibgenId) FROM scimag LIMIT 1";
 
-        public const string SEARCH_SCIMAG = "SELECT * FROM scimag WHERE Id IN (SELECT rowid FROM scimag_fts WHERE scimag_fts MATCH @SearchQuery) ORDER BY Id";
+        public const string SEARCH_SCIMAG = "SELECT * FROM scimag WHERE Id IN (SELECT rowid FROM scimag_fts WHERE scimag_fts MATCH @SearchQuery) ORDER BY Id DESC";
 
         public const string INSERT_SCIMAG =
             "INSERT INTO scimag VALUES (@Id,@Doi,@Doi2,@Title,@Authors,@Year,@Month,@Day,@Volume,@Issue,@FirstPage,@LastPage,@Journal,@Isbn,@Issnp,@Issne," +
